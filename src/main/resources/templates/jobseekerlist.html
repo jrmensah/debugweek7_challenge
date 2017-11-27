@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="/css/Style.css"/>
+
+</head>
+<body class="body3">
+
+<div th:fragment="navlink">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <!--This will collapse the navigation bar and make it shown while clicking the bar even after min size,-->
+                <!--The Collapse start here-->
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#testNavBar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="testNavBar">
+                <!--The Collapse end here-->
+
+                <div class="row">
+                    <ul class="nav navbar-nav">
+                        <div class="col-md-6"><li><a href="/index">Index</a></li></div>
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+</div>
+
+<h4>Job Seeker Details</h4>
+<div class="container">
+    <div class="table">
+        <tr>
+            <th class="text-center">firstName</th>
+            <th class="text-center">lastName</th>
+            <th class="text-center">email</th>
+            <th class="text-center">DegreeCompleted</th>
+            <th class="text-center">UniversityName</th>
+            <th class="text-center">YearsCompleted</th>
+            <th class="text-center">JobTittle</th>
+            <th class="text-center">CompanyName</th>
+            <th class="text-center">YearsWorked</th>
+            <th class="text-center">SkilledType</th>
+            <th class="text-center">Proffesional_Level</th>
+        </tr>
+
+        <tr th:each="jobseeker: ${jobseekers}">
+            <!--<tr th:each="jobseeker: ${jobseekerlist}">-->
+
+                <td class="text-center"><p th:text="${jobseeker.firstName}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.lastName}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.email}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.DegreeCompleted}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.UniversityName}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.YearsCompleted}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.CompanyName}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.YearsWorked}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.SkilledType}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.Proffesional_Level}">Show</p></td>
+
+            </tr>
+
+    </div>
+</div>
+</body>
+</html>

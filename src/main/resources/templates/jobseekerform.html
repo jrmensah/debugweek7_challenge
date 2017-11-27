@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="/css/Style.css"/>
+
+</head>
+<body class="body3">
+
+<div th:fragment="navlink">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <!--This will collapse the navigation bar and make it shown while clicking the bar even after min size,-->
+                <!--The Collapse start here-->
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#testNavBar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="testNavBar">
+                <!--The Collapse end here-->
+
+                <div class="row">
+                    <ul class="nav navbar-nav">
+                        <div class="col-md-6"><li><a href="/register">Registration</a></li></div>
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h4> Job Seekers Information</h4>
+<form action="#" th:action="@{/process}" th:object="${jobseeker}" method="post">
+    FirstName:<input type="text" th:field="*{firstName}"/> <span th:if="${#fields.hasErrors('firstName')}" th:error="*{firstName}"></span><br/>
+    LastName:<input type="text" th:field="*{lastName}"/> <span th:if="${#fields.hasErrors('lastName')}" th:error="*{lastName}"></span><br/>
+    Email:<input type="text" th:field="*{email}"/> <span th:if="${#fields.hasErrors('email')}" th:error="*{email}"></span><br/>
+    DegreeCompleted:<input type="text" th:field="*{DegreeCompleted}"/> <span th:if="${#fields.hasErrors('DegreeCompleted')}" th:error="*{DegreeCompleted}"></span><br/>
+    UniversityName:<input type="text" th:field="*{UniversityName}"/> <span th:if="${#fields.hasErrors('UniversityName')}" th:error="*{UniversityName}"></span><br/>
+    YearsCompleted:<input type="text" th:field="*{YearsCompleted}"/> <span th:if="${#fields.hasErrors('YearsCompleted')}" th:error="*{YearsCompleted}"></span><br/>
+    JobTittle:<input type="text" th:field="*{JobTittle}"/> <span th:if="${#fields.hasErrors('JobTittle')}" th:error="*{JobTittle}"></span><br/>
+    CompanyName:<input type="text" th:field="*{CompanyName}"/> <span th:if="${#fields.hasErrors('CompanyName')}" th:error="*{CompanyName}"></span><br/>
+    YearsWorked:<input type="text" th:field="*{YearsWorked}"/> <span th:if="${#fields.hasErrors('YearsWorked')}" th:error="*{YearsWorked}"></span><br/>
+    SkilledType:<input type="text" th:field="*{SkilledType}"/> <span th:if="${#fields.hasErrors('SkilledType')}" th:error="*{SkilledType}"></span><br/>
+    Proffesional_Level:<input type="text" th:field="*{Proffesional_Level}"/> <span th:if="${#fields.hasErrors('Proffesional_Level')}" th:error="*{Proffesional_Level}"></span><br/>
+<input type="submit"  value="Submit"/>
+
+</form>
+</div>
+    </div>
+</div>
+</body>
+</html>

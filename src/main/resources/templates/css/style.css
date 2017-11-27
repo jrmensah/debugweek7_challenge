@@ -1,0 +1,71 @@
+.html {
+    height: 100%;
+}
+.body {
+    background-color:lightgray;
+}
+
+
+.font-color1
+{
+    color:darkred;
+}
+
+.font-color
+{
+    color:darkred;
+    align-content: left;
+}
+
+.font-size1
+{
+    font-style: italic ;
+    color: gray;
+    font-size: 11px;
+!important;
+}
+
+.font-size
+{
+    font-style: italic ;
+    font-color: gray;
+    font-size: 10px;
+    !important;
+}
+.standardimage
+{
+    height:100px;
+    width: 100px;
+    margin-right: 1%;
+}
+
+
+
+.standardimage1
+{
+    height: 15px;
+    width: 15px;
+    margin-right: 1%;
+}
+
+
+.standardimage2
+{
+    height: 15px;
+    width: 15px;
+    margin-right: 1%;
+}
+
+
+.li:before {
+    content: "•";
+    color: darkred;
+    padding-right:7px;
+    width: 50em;
+}
+.li1
+{
+    font-color: black;
+    font-size: 11px;
+    font-style: normal;
+}
