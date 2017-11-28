@@ -17,10 +17,10 @@ public class HomeController {
 	@Autowired
 	private UserService userService;
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 
 	@Autowired
-	JobSeekerRepository jobSeekerRepository;
+	private JobSeekerRepository jobSeekerRepository;
 
 	@RequestMapping("/login")
 
@@ -55,12 +55,12 @@ public class HomeController {
 			userService.saveUser(user);
 			model.addAttribute("message", "User Account Successfully Created");
 		}
-		return "redirect:/jobseekerform";
+		return "Home";
 	}
 
 
 	@RequestMapping("/jobseekerform")
-	public String jobseekerform(Model model)
+	public String getJobSeekerForm(Model model)
 	{
 		model.addAttribute("jobseeker", new JobSeeker());
 		return "jobseekerform";
@@ -68,7 +68,7 @@ public class HomeController {
 
 
 	@PostMapping("/jobseekerform")
-	public String jobseekerform(@Valid JobSeeker jobSeeker, BindingResult result)
+	public String processJobSeekerForm(@Valid JobSeeker jobSeeker, BindingResult result)
 	{
 		if(result.hasErrors())
 		{
@@ -79,40 +79,50 @@ public class HomeController {
 	}
 
 
-	@RequestMapping(value = "/jobseekerlist")
-	public String jobseekerlist(Model model) {
+	@RequestMapping("/jobseekerlist")
+	public String getJobSeekerList(Model model) {
 
 		model.addAttribute("jobseekers",jobSeekerRepository.findAll());
 		return "jobseekerlist";
 	}
 
 	@RequestMapping("/user")
-	public String jobseekerlist(Model model, @RequestParam("firstName") String firstName,
+	public String getUser(Model model, @RequestParam("firstName") String firstName,
  String lastName, String email, String degreeCompleted, String universityName, String yearsCompleted,
-                         String jobTittle, String companyName, String yearsWorked, String skilledType, String proffesional_Level) {
+                         String jobTitle, String companyName, String yearsWorked, String skilledType, String professional_Level) {
 
 		model.addAttribute("First", firstName+" "+lastName);
 		model.addAttribute("email", email);
 		model.addAttribute("education", degreeCompleted+" "+universityName+" "+yearsCompleted);
 		model.addAttribute("work" , companyName +" "+yearsWorked);
-		model.addAttribute("skill" , skilledType+", "+proffesional_Level);
+		model.addAttribute("skill" , skilledType+", "+professional_Level);
 		model.addAttribute(new JobSeeker());
 		return "user";
 	}
-
-//	@RequestMapping ("/searchfirstName")
-//	public String searchfirstName(@RequestParam("firstName") String firstName, Model model) {
+//
+//	@RequestMapping ("/searchFirstName")
+//	public String searchFirstName(@RequestParam("firstName") String firstName, Model model) {
 //		model.addAttribute(jobSeekerRepository.findByFirstName(firstName));
 //
 //		return "user";
 //	}
 //
 //
-//	@RequestMapping ("/searchskillType")
-//	public String searchskillType(@RequestParam("skilledType") String skilledType, Model model) {
+//	@RequestMapping ("/searchSkillType")
+//	public String searchSkillType(@RequestParam("skilledType") String skilledType, Model model) {
 //		model.addAttribute(jobSeekerRepository.findBySkilledType(skilledType));
 //		return "user";
 //	}
+
+	@RequestMapping("/admin")
+	public String admin(){
+		return "index";
+	}
+
+	@RequestMapping("/logout")
+	public String logout(){
+		return "login";
+	}
 
 }
 

@@ -22,7 +22,7 @@ public class JobSeeker {
 	private String CompanyName;
 	private String YearsWorked;
 	private String SkilledType;
-	private String Proffesional_Level;
+	private String Professional_Level;
 
 	@ManyToMany(mappedBy = "jobSeekers")
 	private Collection<User> users;
@@ -119,16 +119,15 @@ public class JobSeeker {
 		this.SkilledType = skilledType;
 	}
 
-	public String getProffesional_Level() {
-		return this.Proffesional_Level;
+	public String getProfessional_Level() {
+		return this.Professional_Level;
 	}
 
-	public void setProffesional_Level(String proffesional_Level) {
-		this.Proffesional_Level = proffesional_Level;
+	public void setProfessional_Level(String professional_Level) {
+		this.Professional_Level = professional_Level;
 	}
 
-	public JobSeeker(String firstName, String lastName, String email, String degreeCompleted, String universityName, String yearsCompleted, String jobTittle, String companyName, String yearsWorked, String skilledType, String proffesional_Level, Collection<User> users)
-	{
+	public JobSeeker(String firstName, String lastName, String email, String degreeCompleted, String universityName, String yearsCompleted, String jobTittle, String companyName, String yearsWorked, String skilledType, String professional_Level, Collection<User> users) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -139,8 +138,7 @@ public class JobSeeker {
 		CompanyName = companyName;
 		YearsWorked = yearsWorked;
 		SkilledType = skilledType;
-		Proffesional_Level = proffesional_Level;
+		Professional_Level = professional_Level;
 		this.users = users;
 	}
-
 }
