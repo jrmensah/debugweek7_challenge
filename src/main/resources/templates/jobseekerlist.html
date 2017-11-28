@@ -60,7 +60,7 @@
             <th class="text-center">CompanyName</th>
             <th class="text-center">YearsWorked</th>
             <th class="text-center">SkilledType</th>
-            <th class="text-center">Proffesional_Level</th>
+            <th class="text-center">Professional_Level</th>
         </tr>
 
         <tr th:each="jobseeker: ${jobseekers}">
@@ -75,11 +75,15 @@
                 <td class="text-center"><p th:text="${jobseeker.CompanyName}">Show</p></td>
                 <td class="text-center"><p th:text="${jobseeker.YearsWorked}">Show</p></td>
                 <td class="text-center"><p th:text="${jobseeker.SkilledType}">Show</p></td>
-                <td class="text-center"><p th:text="${jobseeker.Proffesional_Level}">Show</p></td>
+                <td class="text-center"><p th:text="${jobseeker.Professional_Level}">Show</p></td>
 
             </tr>
 
     </div>
 </div>
 </body>
+<script src="/js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.js" type="text/javascript"></script>
+<script src="/js/awesome-landing-page.js" type="text/javascript"></script>
 </html>
