@@ -47,14 +47,16 @@
 </div>
 <body class="container">
 <div th:each="jobseeker:${jobseekerlist}">
-    <p th:text="${jobseeker.firstName}+' '+${jobseeker.lastName}"> JobSeeker</p>
+    <h4>Name</h4>
+    <p th:text="${jobseeker.firstName}+'  '+${jobseeker.lastName}"> JobSeeker</p>
+    <h4>Email</h4>
     <p th:text="${jobseeker.email}">Jobseeker Email</p>
     <h4>Education</h4>
-    <p th:text="${jobseeker.DegreeCompleted}+' '+${jobseeker.UniversityName}>+' '+${jobseeker.YearsCompleted}">JobSeeker</p>
-    <h4>Experiance</h4>
-    <p th:text="${jobseeker.CompanyName}+' '+${jobseeker.YearsWorked}+' '+${jobseeker.JobTittle}">JobSeeker</p>
+    <p th:text="${jobseeker.DegreeCompleted}+'  '+${jobseeker.UniversityName}+'  '+${jobseeker.YearsCompleted}">JobSeeker</p>
+    <h4>Experience</h4>
+    <p th:text="${jobseeker.CompanyName}+'  '+${jobseeker.YearsWorked}+'  '+${jobseeker.JobTittle}">JobSeeker</p>
     <h4>Skills</h4>
-    <p th:text="${jobseeker.SkilledType}+' '+${jobseeker.Proffesional_Level}">JobSeeker</p>
+    <p th:text="${jobseeker.SkilledType}+'  '+${jobseeker.Professional_Level}">JobSeeker</p>
 </div>
 
 </body>
