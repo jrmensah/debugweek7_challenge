@@ -145,4 +145,8 @@ public class User
 		this.jobSeekers = jobSeekers;
 	}
 
+	public void addRole(User user){
+
+	}
+
 }
